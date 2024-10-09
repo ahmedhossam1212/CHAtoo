@@ -1,3 +1,7 @@
+// Copyright 2024 the Dart project authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license
+// that can be found in the LICENSE file.
+
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
@@ -21,7 +25,7 @@ class GenerativeAISample extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const ChatScreen(title: 'CHAtoo'),
+      home: const ChatScreen(title: 'BotTalk'),
     );
   }
 }
@@ -62,35 +66,62 @@ class ApiKeyWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    _textController.text = "AIzaSyCWdUi9MrWEloN7Vw7T1F5NW7kE6ZA9Tsk";
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Image.network(
-                "https://lh3.googleusercontent.com/Xtt-WZqHiV8OjACMMMr6wMdoMGE7bABi-HYujupzevufo1kiHUFQZukI1JILhjItrPNrDWLq6pfd=s600-w600"),
+            Container(
+              width: 200,
+              height: 200,
+              clipBehavior: Clip.hardEdge,
+              decoration: const BoxDecoration(shape: BoxShape.circle),
+              child: Image.network(
+                  "https://st4.depositphotos.com/4799321/22638/v/450/depositphotos_226382150-stock-illustration-cute-robot-chatbot-icon-flat.jpg"),
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+
+            const Text(
+                style: TextStyle(fontSize: 18),
+                "Welcome, my friend, I am your friend Botalk. I am happy to help you in your daily life "),
             const SizedBox(height: 8),
-            Center(
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.blueGrey,
-                    borderRadius: BorderRadius.circular(20)),
-                child: TextButton(
+            // Link(
+            //   uri: Uri.https('makersuite.google.com', '/app/apikey'),
+            //   target: LinkTarget.blank,
+            //   builder: (context, followLink) => TextButton(
+            //     onPressed: followLink,
+            //     child: const Text('Get an API Key'),
+            //   ),
+            // ),
+            const SizedBox(height: 8),
+            Row(
+              children: [
+                // Expanded(
+                //   child: TextField(
+                //     decoration:
+                //         textFieldDecoration(context, 'Enter your API key'),
+                //     controller: _textController,
+                //     onSubmitted: (value) {
+                //       onSubmitted(value);
+                //     },
+                //   ),
+                // ),
+                const SizedBox(height: 8),
+                TextButton(
                   onPressed: () {
                     onSubmitted(_textController.value.text);
                   },
                   child: const Text(
-                    'Get Start !',
-                    style: TextStyle(fontSize: 15),
+                    'Get start',
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                   ),
                 ),
-              ),
+              ],
             ),
-            const SizedBox(
-              height: 350,
-            ),
-            const Text("power by Google AI Studio"),
           ],
         ),
       ),
@@ -99,8 +130,7 @@ class ApiKeyWidget extends StatelessWidget {
 }
 
 class ChatWidget extends StatefulWidget {
-  const ChatWidget(
-      {this.apiKey = "AIzaSyCWdUi9MrWEloN7Vw7T1F5NW7kE6ZA9Tsk", super.key});
+  const ChatWidget({required this.apiKey, super.key});
 
   final String apiKey;
 
