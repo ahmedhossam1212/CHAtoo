@@ -3,7 +3,7 @@
 chat bot to help you in dialy tasks and real life powered by Google AI Studio
 
 
-## Getting Started
+# Layouts
 
 <p align="center">
  <img src="https://github.com/user-attachments/assets/4a48f0d1-6867-45d0-83b9-e14d8d97bbc1" width="200" />
