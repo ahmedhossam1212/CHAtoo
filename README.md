@@ -1,6 +1,7 @@
 # ChAtoo
 
-chatbot
+chat bot to help you in dialy tasks and real life powered by Google AI Studio
+
 
 ## Getting Started
 
