@@ -69,7 +69,7 @@ class ApiKeyWidget extends StatelessWidget {
     _textController.text = "AIzaSyCWdUi9MrWEloN7Vw7T1F5NW7kE6ZA9Tsk";
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(18.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -78,7 +78,7 @@ class ApiKeyWidget extends StatelessWidget {
               height: 200,
               clipBehavior: Clip.hardEdge,
               decoration: const BoxDecoration(shape: BoxShape.circle),
-              child: Image.asset("assets/images/chatoLogo.jpg"),
+              child: Image.asset("assets/images/applogo.jpg"),
             ),
             const SizedBox(
               height: 50,
@@ -96,38 +96,27 @@ class ApiKeyWidget extends StatelessWidget {
             //     child: const Text('Get an API Key'),
             //   ),
             // ),
-            const SizedBox(height: 8),
-            Row(
-              children: [
-                // Expanded(
-                //   child: TextField(
-                //     decoration:
-                //         textFieldDecoration(context, 'Enter your API key'),
-                //     controller: _textController,
-                //     onSubmitted: (value) {
-                //       onSubmitted(value);
-                //     },
-                //   ),
-                // ),
-                const SizedBox(height: 15),
-                Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10)),
-                  child: TextButton(
-                    onPressed: () {
-                      onSubmitted(_textController.value.text);
-                    },
-                    child: const Text(
-                      'Get start',
-                      style: TextStyle(
-                          fontSize: 15,
-                          color: Colors.black54,
-                          fontWeight: FontWeight.bold),
-                    ),
+
+            const SizedBox(height: 200),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: Container(
+                width: 90,
+                height: 40,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10)),
+                child: const Center(
+                  child: Text(
+                    'Get start',
+                    maxLines: 1,
+                    style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.black54,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
-              ],
+              ),
             ),
           ],
         ),

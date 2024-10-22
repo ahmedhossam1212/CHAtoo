@@ -48,7 +48,7 @@ dev_dependencies:
 flutter_launcher_icons:
   android: true
   ios: true
-  image_path: "assets/images/chatoLogo.jpg"
+  image_path: "assets/images/applogo.jpg"
   
 
 # For information on the generic Dart part of this file, see the
