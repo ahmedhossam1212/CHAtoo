@@ -1,7 +1,3 @@
-// Copyright 2024 the Dart project authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license
-// that can be found in the LICENSE file.
-
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
@@ -83,37 +79,32 @@ class ApiKeyWidget extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-
             const Text(
                 style: TextStyle(fontSize: 18),
                 "Welcome, my friend, I am your friend Botalk. I am happy to help you in your daily life "),
             const SizedBox(height: 8),
-            // Link(
-            //   uri: Uri.https('makersuite.google.com', '/app/apikey'),
-            //   target: LinkTarget.blank,
-            //   builder: (context, followLink) => TextButton(
-            //     onPressed: followLink,
-            //     child: const Text('Get an API Key'),
-            //   ),
-            // ),
-
             const SizedBox(height: 200),
             Align(
               alignment: Alignment.bottomRight,
-              child: Container(
-                width: 90,
-                height: 40,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10)),
-                child: const Center(
-                  child: Text(
-                    'Get start',
-                    maxLines: 1,
-                    style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.black54,
-                        fontWeight: FontWeight.bold),
+              child: InkWell(
+                onTap: () {
+                  onSubmitted(_textController.value.text);
+                },
+                child: Container(
+                  width: 90,
+                  height: 40,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: const Center(
+                    child: Text(
+                      'Get start',
+                      maxLines: 1,
+                      style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.black54,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               ),
