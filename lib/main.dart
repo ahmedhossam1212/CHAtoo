@@ -78,8 +78,7 @@ class ApiKeyWidget extends StatelessWidget {
               height: 200,
               clipBehavior: Clip.hardEdge,
               decoration: const BoxDecoration(shape: BoxShape.circle),
-              child: Image.network(
-                  "https://st4.depositphotos.com/4799321/22638/v/450/depositphotos_226382150-stock-illustration-cute-robot-chatbot-icon-flat.jpg"),
+              child: Image.asset("assets/images/chatoLogo.jpg"),
             ),
             const SizedBox(
               height: 50,
@@ -110,14 +109,22 @@ class ApiKeyWidget extends StatelessWidget {
                 //     },
                 //   ),
                 // ),
-                const SizedBox(height: 8),
-                TextButton(
-                  onPressed: () {
-                    onSubmitted(_textController.value.text);
-                  },
-                  child: const Text(
-                    'Get start',
-                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                const SizedBox(height: 15),
+                Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10)),
+                  child: TextButton(
+                    onPressed: () {
+                      onSubmitted(_textController.value.text);
+                    },
+                    child: const Text(
+                      'Get start',
+                      style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.black54,
+                          fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               ],
